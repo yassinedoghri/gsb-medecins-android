@@ -71,12 +71,12 @@ public class DAO {
                 Node medecin = listeMed.item(i);
                 NodeList lesProprietes = medecin.getChildNodes();
 
-                String nom = null;
-                String prenom = null;
-                String adresse = null;
-                String specialite = null;
-                String tel = null;
-                for (int j = 0; i < lesProprietes.getLength(); j++) {
+                String nom = "";
+                String prenom = "";
+                String adresse = "";
+                String specialite = "";
+                String tel = "";
+                for (int j = 0; j < lesProprietes.getLength(); j++) {                    
                     if (lesProprietes.item(j).getNodeName().equals("nom")) {
                         nom = lesProprietes.item(j).getTextContent().trim();
                     }
