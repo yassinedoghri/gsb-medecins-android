@@ -7,6 +7,7 @@
 package y.doghri.medecins;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import java.util.List;
 import model.DAO;
@@ -21,6 +22,8 @@ public class MedecinActivity extends ListActivity{
         super.onCreate(icicle);
         setContentView(R.layout.listemeds);
         
+        Intent inter = getIntent();
+        String dep = inter.getStringExtra("leDep");
         List<Medecin> lesMeds = DAO.getLesMeds(dep);
         MedAdapter adapter = new MedAdapter(lesMeds, this);
         setListAdapter(adapter);

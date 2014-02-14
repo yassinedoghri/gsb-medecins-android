@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package model;
 
 import java.net.URL;
@@ -22,12 +21,13 @@ import org.w3c.dom.NodeList;
  * @author ydoghri
  */
 public class DAO {
-    private static final String url = "http://gaemedecins.appspot.com/Controleur/medParDep/listeDep";
-    
+
+    private static final String url = "http://gaemedecins.appspot.com/Controleur/medParDep";
+
     public static List<String> getLesDeps() {
         List<String> lesDeps = new ArrayList<String>();
         try {
-            URL myURL = new URL(url);
+            URL myURL = new URL(url + "/listeDep");
             Document doc;
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -44,7 +44,6 @@ public class DAO {
                 for (int j = 0; i < lesProprietes.getLength(); j++) {
                     if (lesProprietes.item(j).getNodeName().equals("num")) {
                         lesDeps.add(lesProprietes.item(j).getTextContent().trim());
-                        System.out.println(lesProprietes.item(j).getTextContent().trim());
                         break;
                     }
                 }
@@ -54,10 +53,51 @@ public class DAO {
         }
         return lesDeps;
     }
-    
+
     public static List<Medecin> getLesMeds(String Dep) {
         List<Medecin> lesMeds = new ArrayList<Medecin>();
+        try {
+            URL myURL = new URL(url + "/listeMed/" + Dep);
+            Document doc;
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            doc = db.parse(myURL.openStream());
 
+            org.w3c.dom.Element racine = doc.getDocumentElement();
+
+            NodeList listeMed = racine.getElementsByTagName("Medecin");
+            //récup des médecins
+            for (int i = 0; i < listeMed.getLength(); i++) {
+                Node medecin = listeMed.item(i);
+                NodeList lesProprietes = medecin.getChildNodes();
+
+                String nom = null;
+                String prenom = null;
+                String adresse = null;
+                String specialite = null;
+                String tel = null;
+                for (int j = 0; i < lesProprietes.getLength(); j++) {
+                    if (lesProprietes.item(j).getNodeName().equals("nom")) {
+                        nom = lesProprietes.item(j).getTextContent().trim();
+                    }
+                    if (lesProprietes.item(j).getNodeName().equals("prenom")) {
+                        prenom = lesProprietes.item(j).getTextContent().trim();
+                    }
+                    if (lesProprietes.item(j).getNodeName().equals("adresse")) {
+                        adresse = lesProprietes.item(j).getTextContent().trim();
+                    }
+                    if (lesProprietes.item(j).getNodeName().equals("specialite")) {
+                        specialite = lesProprietes.item(j).getTextContent().trim();
+                    }
+                    if (lesProprietes.item(j).getNodeName().equals("tel")) {
+                        tel = lesProprietes.item(j).getTextContent().trim();
+                    }
+                }
+                lesMeds.add(new Medecin(nom, prenom, adresse, specialite, tel));
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         return lesMeds;
     }
