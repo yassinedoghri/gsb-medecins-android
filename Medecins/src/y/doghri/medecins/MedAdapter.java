@@ -20,8 +20,8 @@ import model.Medecin;
  */
 public class MedAdapter extends BaseAdapter {
 
-    private List<Medecin> lesMeds;
-    private Context c;
+    private final List<Medecin> lesMeds;
+    private final Context c;
 
     MedAdapter(List data, Context c) {
         lesMeds = data;
@@ -41,12 +41,16 @@ public class MedAdapter extends BaseAdapter {
         LayoutInflater vi = (LayoutInflater)c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = vi.inflate(R.layout.lignemed, null);
         TextView nom = (TextView) v.findViewById(R.id.nom);
-        TextView prenom = (TextView) v.findViewById(R.id.nomProprio);
-        TextView num = (TextView) v.findViewById(R.id.race);
+        TextView prenom = (TextView) v.findViewById(R.id.prenom);
+        TextView adresse = (TextView) v.findViewById(R.id.adresse);
+        TextView specialite = (TextView) v.findViewById(R.id.specialite);
+        TextView tel = (TextView) v.findViewById(R.id.tel);
         Medecin leMed = lesMeds.get(i);
         nom.setText(leMed.getNom());
         prenom.setText(leMed.getPrenom());
-        num.setText(leMed.getNum());
+        adresse.setText(leMed.getAdresse());
+        specialite.setText(leMed.getSpecialite());
+        tel.setText(leMed.getTel());
         return v;
     }
 }
