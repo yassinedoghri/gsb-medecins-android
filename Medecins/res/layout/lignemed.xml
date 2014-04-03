@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-             android:layout_width="match_parent" 
-             android:layout_height="match_parent" 
-             android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
-    <TableRow 
-        android:layout_height="wrap_content" 
-        android:layout_width="fill_parent" 
-        android:gravity="center_horizontal">  
-        <TextView 
-            android:id="@+id/prenom"
-            android:layout_weight="1" android:background="#b0b0b0"
-            android:textColor="#000000"
-            android:padding="10dip" android:gravity="center"/>
-        <TextView
-            android:id="@+id/nom"
-            android:layout_weight="1" android:background="#a09f9f"
-            android:textColor="#000000"
-            android:padding="10dip" android:gravity="center"/>
-        <TextView
-            android:id="@+id/adresse"
-            android:layout_weight="1" android:background="#a09f9f"
-            android:textColor="#000000"
-            android:padding="10dip" android:gravity="center"/>
-        <TextView
-            android:id="@+id/specialite"
-            android:layout_weight="1" android:background="#a09f9f"
-            android:textColor="#000000"
-            android:padding="10dip" android:gravity="center"/>
-        <TextView
-            android:id="@+id/tel"
-            android:layout_weight="1" android:background="#a09f9f"
-            android:textColor="#000000"
-            android:padding="10dip" android:gravity="center"/>
-    </TableRow>
-</TableLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+                android:layout_width="match_parent" 
+                android:layout_height="match_parent"
+                android:padding="10dip"
+                android:background="@drawable/list_selector"
+>
+    <TextView
+        android:id="@+id/prenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/dark_text_bright_focused"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/dark_text_bright_focused"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@id/prenom"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/spe"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/darkgray_text_bright_focused" 
+        android:paddingTop="20dp" />
+    <!-- Rightend Text -->
+    <TextView 
+        android:id="@+id/cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/dark_text_bright_focused"
+        android:layout_alignParentRight="true"
+    />
+</RelativeLayout>
 

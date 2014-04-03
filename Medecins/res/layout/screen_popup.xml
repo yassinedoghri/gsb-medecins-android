@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/popup_element"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" 
+                android:background="@color/white">
+
+    <TextView
+        android:id="@+id/popuptitle"
+        android:text="@string/medecin_details"
+        android:textSize="20sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/blue_gsb"
+        android:background="@drawable/bottomborder"
+    />
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:stretchColumns="*"
+        android:shrinkColumns="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="80dp"
+    >
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+            <TextView
+                android:text="@string/labelprenom"
+                android:textColor="@color/lightblack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="0.4"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/prenom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:paddingLeft="5dp" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+            <TextView
+                android:text="@string/labelnom"
+                android:textColor="@color/lightblack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="0.4"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/nom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:paddingLeft="5dp" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+            <TextView
+                android:text="@string/labeladresse"
+                android:textColor="@color/lightblack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="0.4"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/adresse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:paddingLeft="5dp" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+            <TextView
+                android:text="@string/labelspe"
+                android:textColor="@color/lightblack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="0.4"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/spe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:paddingLeft="5dp" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+            <TextView
+                android:text="@string/labeltel"
+                android:textColor="@color/lightblack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="0.4"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/tel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:paddingLeft="5dp" />
+        </TableRow>
+    </TableLayout>
+    <ImageButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="closePopup"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/descclose"
+        android:padding="4dp"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+    />
+    <LinearLayout android:orientation="horizontal" 
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:gravity="bottom"
+    >
+        <Button
+            android:id="@+id/locate_button"
+            android:text="@string/locate_btn"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:textColor="@drawable/dark_text_bright_focused"
+            android:background="@drawable/list_selector"
+            android:drawableTop="@drawable/ic_map_marker"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+        />
+        <View android:layout_height="50dp"
+              android:layout_width="1dp"
+              android:background="#90909090"
+              android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/call_button"
+            android:text="@string/call_btn"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:textColor="@drawable/dark_text_bright_focused"
+            android:background="@drawable/list_selector"
+            android:drawableTop="@drawable/ic_phone"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+        />
+        <View android:layout_height="50dp"
+              android:layout_width="1dp"
+              android:background="#90909090"
+              android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/sms_button"
+            android:text="@string/sms_btn"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:textColor="@drawable/dark_text_bright_focused"
+            android:background="@drawable/list_selector"
+            android:drawableTop="@drawable/ic_sms"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+        />
+    </LinearLayout>
+</RelativeLayout>

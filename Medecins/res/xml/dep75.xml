@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<Medecins>
+
+
+
+     
+        <Medecin>
+            <nom>Daminel</nom>
+            <prenom>Elise</prenom>
+            <adresse>12 rue primer 75012 Paris</adresse>
+            <specialite>Rhumato</specialite>
+            <tel>01 66 70 36 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Dupont</nom>
+            <prenom>Alain</prenom>
+            <adresse>12 rue taine 75012 Paris</adresse>
+            <specialite></specialite>
+            <tel>01 43 70 36 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Dupont</nom>
+            <prenom>Bernard</prenom>
+            <adresse>12 rue tintin 75012 Paris</adresse>
+            <specialite>Osteo</specialite>
+            <tel>01 43 70 35 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Durand</nom>
+            <prenom>Claude</prenom>
+            <adresse>12 rue planche 75012 Paris</adresse>
+            <specialite>Osteo</specialite>
+            <tel>01 43 75 36 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Durand</nom>
+            <prenom>Denis</prenom>
+            <adresse>12 rue perlin 75012 Paris</adresse>
+            <specialite></specialite>
+            <tel>01 55 70 36 06</tel>
+        </Medecin>
+    
+
+</Medecins>

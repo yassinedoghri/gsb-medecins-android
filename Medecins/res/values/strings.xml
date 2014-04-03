@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GSB</string>
+    <string name="desclogo">Logo GSB</string>
+    <string name="descarrow">Icone flèche</string>
+    <string name="desccontactcard">Icone Contact Card</string>
+    <string name="descclose">Icone Close Popup</string>
+    <string name="search_hint">Filtrer&#8230;</string> 
+    <string name="main_title">Liste des départements</string> 
+    <string name="medecin_title">Liste des médecins du </string> 
+    <string name="medecin_details">Détails du médecin</string> 
+    <string name="close">Fermer</string>
+    <string name="labelprenom">Prénom :</string>
+    <string name="labelnom">Nom :</string>
+    <string name="labeladresse">Adresse :</string>
+    <string name="labelspe">Spécialité :</string>
+    <string name="labeltel">Téléphone :</string>
+    <string name="locate_btn">Localiser</string>
+    <string name="call_btn">Appeler</string>
+    <string name="sms_btn">SMS</string>
+    <string name="action_search">Recherche</string>
 </resources>

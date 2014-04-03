@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
+import android.content.res.Resources;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +24,7 @@ public class DAO {
         List<String> lesDeps = new ArrayList<String>();
         try {
             URL myURL = new URL(url + "/listeDep");
+//            Resources myUrl = Resources.getSystem().getXml(1);
             Document doc;
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -76,7 +73,7 @@ public class DAO {
                 String adresse = "";
                 String specialite = "";
                 String tel = "";
-                for (int j = 0; j < lesProprietes.getLength(); j++) {                    
+                for (int j = 0; j < lesProprietes.getLength(); j++) {
                     if (lesProprietes.item(j).getNodeName().equals("nom")) {
                         nom = lesProprietes.item(j).getTextContent().trim();
                     }

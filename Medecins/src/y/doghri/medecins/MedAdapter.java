@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package y.doghri.medecins;
 
 import android.content.Context;
@@ -51,15 +46,26 @@ public class MedAdapter extends BaseAdapter implements Filterable {
         v = vi.inflate(R.layout.lignemed, null);
         TextView nom = (TextView) v.findViewById(R.id.nom);
         TextView prenom = (TextView) v.findViewById(R.id.prenom);
-        TextView adresse = (TextView) v.findViewById(R.id.adresse);
-        TextView specialite = (TextView) v.findViewById(R.id.specialite);
-        TextView tel = (TextView) v.findViewById(R.id.tel);
+        TextView specialite = (TextView) v.findViewById(R.id.spe);
+        TextView postalcode = (TextView) v.findViewById(R.id.cp);
+//        TextView adresse = (TextView) v.findViewById(R.id.adresse);
+//        TextView tel = (TextView) v.findViewById(R.id.tel);
         Medecin leMed = filteredData.get(i);
         nom.setText(leMed.getNom());
         prenom.setText(leMed.getPrenom());
-        adresse.setText(leMed.getAdresse());
-        specialite.setText(leMed.getSpecialite());
-        tel.setText(leMed.getTel());
+        
+        if (leMed.getSpecialite().equals("")) {
+            specialite.setText("Aucune");
+        } else {
+            specialite.setText(leMed.getSpecialite());
+        }
+
+        // lastindexof récupère la position du dernier espace
+        // -5 pour inclure le code postal
+        String cp = leMed.getAdresse().substring(leMed.getAdresse().lastIndexOf(' ') - 5);
+        postalcode.setText(cp);
+//        adresse.setText(leMed.getAdresse());
+//        tel.setText(leMed.getTel());
         return v;
     }
 
@@ -77,9 +83,9 @@ public class MedAdapter extends BaseAdapter implements Filterable {
                 } else {
                     List<Medecin> filterResultsData = new ArrayList<Medecin>();
                     String q = charSequence.toString().toLowerCase();
-                    
+
                     for (Medecin data : lesMeds) {
-                        if (data.getNom().toLowerCase().startsWith(q)) {
+                        if (data.getNom().toLowerCase().startsWith(q) || data.getPrenom().toLowerCase().startsWith(q)) {
                             filterResultsData.add(data);
                         }
                     }
