@@ -1,4 +1,3 @@
-
 package model;
 
 /**
@@ -6,6 +5,7 @@ package model;
  * @author ydoghri
  */
 public class Medecin {
+
     private String nom;
     private String prenom;
     private String adresse;
@@ -59,5 +59,5 @@ public class Medecin {
     public void setTel(String tel) {
         this.tel = tel;
     }
-    
+
 }

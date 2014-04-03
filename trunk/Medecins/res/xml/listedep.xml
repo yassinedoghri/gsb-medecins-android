@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<Departements>
+     
+        <Departement>
+            <num>75</num>
+        </Departement>
+     
+        <Departement>
+            <num>95</num>
+        </Departement>
+    
+
+</Departements>
+

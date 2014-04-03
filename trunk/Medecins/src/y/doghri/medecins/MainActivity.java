@@ -3,6 +3,7 @@ package y.doghri.medecins;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -11,20 +12,30 @@ import model.DAO;
 
 public class MainActivity extends ListActivity {
 
+    private ActionBar actionBar;
+
     /**
      * Called when the activity is first created.
+     *
+     * @param savedInstanceState
      */
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
         //lecture des deps
         List<String> lesDeps = DAO.getLesDeps();
         //Création e l'adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, lesDeps);
+                R.layout.lignedep, R.id.list_content, lesDeps);
         setListAdapter(adapter);
+        
+        actionBar = getActionBar();
+        actionBar.setSubtitle("Liste des départements");
+
+        // Hide the action bar title
+//        actionBar.setDisplayShowTitleEnabled(false);
     }
 
     @Override

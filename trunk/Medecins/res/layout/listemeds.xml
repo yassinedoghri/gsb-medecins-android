@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:orientation="vertical"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:background="#ffffff"
+             android:foreground="@drawable/shape_window_dim"
+             android:id="@+id/base"
 >
-    <!-- Editext for Search -->
-    <EditText android:id="@+id/search_box"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:hint="Filtrer..."
-              android:inputType="text"
-              android:maxLines="1"
-    />
-    <TextView
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content" 
-        android:text="Liste des Médecins"
-    />
+    <!--    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+    >
+        <TextView
+            android:id="@+id/title_listemed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/medecin_title"
+            android:layout_alignParentLeft="true"
+            android:textSize="25sp"
+            android:textColor="#4C6464"
+        />
+        <TextView
+            android:id="@+id/dep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#4C6464"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/title_listemed"
+            android:layout_marginLeft="4dp"
+        />
+    </RelativeLayout>-->
     <ListView android:id="@android:id/list"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content">
-    </ListView>
-</LinearLayout>
-
+              android:layout_height="wrap_content"
+              android:divider="#f0f0f0"
+              android:dividerHeight="1dp"
+    />
+    <TextView android:id="@android:id/empty"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:textColor="@color/gray"
+               android:gravity="center_horizontal"
+               android:paddingTop="100dp" />
+    <!-- Editext for Search -->
+    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:id="@+id/filter_element"
+                     android:layout_width="fill_parent"
+                     android:layout_height="wrap_content"
+                     android:visibility="gone">
+        <EditText android:id="@+id/search_box"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/search_hint"
+                  android:textColorHint="@color/blue_text_gsb"
+                  android:textColor="@color/white"
+                  android:drawablePadding="10dp"
+                  android:inputType="text"
+                  android:maxLines="1"
+                  android:background="@color/blue_gsb"
+                  android:padding="10dp"
+        />
+        <ImageButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:onClick="closeFilterText"
+            android:src="@drawable/ic_cancel"
+            android:contentDescription="@string/descclose"
+            android:padding="10dp"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+        />
+    </RelativeLayout>
+</FrameLayout>

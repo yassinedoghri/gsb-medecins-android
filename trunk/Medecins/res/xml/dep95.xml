@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<Medecins>
+
+
+
+     
+        <Medecin>
+            <nom>Benji</nom>
+            <prenom>Alain</prenom>
+            <adresse>11 rue taine 95012 Ambieux</adresse>
+            <specialite></specialite>
+            <tel>02 43 70 36 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Benji</nom>
+            <prenom>Bernard</prenom>
+            <adresse>11 rue tintin 95012 Ambieux</adresse>
+            <specialite>Rhumato</specialite>
+            <tel>02 43 70 35 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Coumert</nom>
+            <prenom>Claude</prenom>
+            <adresse>11 rue planche 95012 Ambieux</adresse>
+            <specialite>Osteo</specialite>
+            <tel>02 43 75 36 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Coumert</nom>
+            <prenom>Denis</prenom>
+            <adresse>11 rue perlin 95012 Ambieux</adresse>
+            <specialite></specialite>
+            <tel>02 55 70 36 06</tel>
+        </Medecin>
+     
+        <Medecin>
+            <nom>Parfinou</nom>
+            <prenom>Elise</prenom>
+            <adresse>11 rue primer 95012 Ambieux</adresse>
+            <specialite>Rhumato</specialite>
+            <tel>02 66 70 36 06</tel>
+        </Medecin>
+    
+
+</Medecins>
